@@ -1836,6 +1836,8 @@
 
     iput-wide v8, v3, Lcom/android/server/notification/RankingHelper$Record;->soundTimeout:J
 
+    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
+
     goto/16 :goto_0
 
     .line 153
@@ -2562,6 +2564,10 @@
     const/4 v5, 0x0
 
     invoke-interface {p1, v5, v4}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    :cond_flyme_0
+
+    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->writeFlymeExtraFields(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto/16 :goto_1
 
