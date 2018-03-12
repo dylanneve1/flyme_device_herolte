@@ -11,4 +11,4 @@ Kernel source :
 https://github.com/LineageOS/android_kernel_samsung_universal8890
 
 If you want to donate to me :
-paypal.me/dylanneve
+https://paypal.me/dylanneve
