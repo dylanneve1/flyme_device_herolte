@@ -249,7 +249,9 @@
     move-object v0, p1
 
     .line 105
-    check-cast v0, Landroid/view/inputmethod/SparseRectFArray;
+    nop
+
+    nop
 
     .line 107
     .local v0, "that":Landroid/view/inputmethod/SparseRectFArray;

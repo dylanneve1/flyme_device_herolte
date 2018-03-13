@@ -591,7 +591,7 @@
 
     .line 1010
     :try_start_0
-    invoke-virtual {p1, v4}, Landroid/view/View;->addChildrenForAccessibility(Ljava/util/ArrayList;)V
+    invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->addChildrenForAccessibility(Ljava/util/ArrayList;)V
 
     .line 1011
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -1186,7 +1186,9 @@
     move-object v6, v5
 
     .line 967
-    check-cast v6, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     .line 968
     .local v6, "parentGroup":Landroid/view/ViewGroup;

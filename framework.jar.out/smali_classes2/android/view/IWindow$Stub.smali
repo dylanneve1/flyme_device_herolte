@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_executeCommand_0:I = 0x1
 
-.field static final TRANSACTION_moved_2:I = 0x3
+.field static final TRANSACTION_moved:I = 0x3
 
 .field static final TRANSACTION_requestAppKeyboardShortcuts:I = 0xe
 

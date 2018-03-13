@@ -1620,7 +1620,7 @@
 
     :goto_4
     or-int/2addr v0, v8
-    
+
     invoke-direct {p0, p1, v0}, Lcom/android/server/wm/WindowAnimator;->isFlymeAllowWhenLocked(Lcom/android/server/wm/WindowState;Z)Z
 
     move-result v0

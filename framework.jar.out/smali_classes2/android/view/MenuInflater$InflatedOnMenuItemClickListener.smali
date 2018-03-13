@@ -140,7 +140,7 @@
 
     .line 245
     .local v2, "ex":Landroid/view/InflateException;
-    invoke-virtual {v2, v1}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     .line 246
     throw v2

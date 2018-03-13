@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.accessibility.IAccessibilityInteractionConnection"
 
-.field static final TRANSACTION_findAccessibilityNodeInfoByAccessibilityId_0:I = 0x1
+.field static final TRANSACTION_findAccessibilityNodeInfoByAccessibilityId:I = 0x1
 
 .field static final TRANSACTION_findAccessibilityNodeInfosByText:I = 0x3
 
@@ -50,7 +50,7 @@
     .line 21
     const-string/jumbo v0, "android.view.accessibility.IAccessibilityInteractionConnection"
 
-    invoke-virtual {p0, p0, v0}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 19
     return-void

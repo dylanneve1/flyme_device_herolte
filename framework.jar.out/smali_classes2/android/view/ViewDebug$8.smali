@@ -69,7 +69,9 @@
 
     const/4 v0, 0x0
 
-    check-cast v0, [Ljava/lang/Object;
+    nop
+
+    nop
 
     invoke-virtual {v1, v2, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -164,7 +164,9 @@
     if-nez v9, :cond_0
 
     .line 1126
-    check-cast v8, [Ljava/lang/Object;
+    nop
+
+    nop
 
     invoke-virtual {p0, p1, v8}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -176,7 +178,9 @@
     move-object v7, p1
 
     .line 1129
-    check-cast v7, Landroid/view/View;
+    nop
+
+    nop
 
     .line 1130
     .local v7, "view":Landroid/view/View;
@@ -253,7 +257,7 @@
 
     .line 1148
     .local v3, "e":Ljava/util/concurrent/ExecutionException;
-    invoke-virtual {v3}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v3}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v6
 
@@ -264,7 +268,9 @@
     if-eqz v8, :cond_2
 
     .line 1150
-    check-cast v6, Ljava/lang/IllegalAccessException;
+    nop
+
+    nop
 
     .end local v6    # "t":Ljava/lang/Throwable;
     throw v6
@@ -277,7 +283,9 @@
     if-eqz v8, :cond_3
 
     .line 1153
-    check-cast v6, Ljava/lang/reflect/InvocationTargetException;
+    nop
+
+    nop
 
     .end local v6    # "t":Ljava/lang/Throwable;
     throw v6
@@ -386,7 +394,7 @@
     if-eqz v2, :cond_1
 
     .line 772
-    invoke-virtual {v2}, Ljava/io/BufferedOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FilterOutputStream;->close()V
 
     .line 774
     :cond_1
@@ -407,7 +415,7 @@
     if-eqz v1, :cond_2
 
     .line 772
-    invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FilterOutputStream;->close()V
 
     .line 774
     :cond_2
@@ -516,7 +524,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 681
-    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/FilterOutputStream;->close()V
 
     .line 664
     return-void
@@ -527,7 +535,7 @@
     move-exception v2
 
     .line 681
-    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/FilterOutputStream;->close()V
 
     .line 680
     throw v2
@@ -579,7 +587,7 @@
 
     .line 692
     .local v5, "id":I
-    invoke-virtual {p0}, Landroid/view/View;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v10
 
@@ -715,7 +723,9 @@
     move-object v3, p0
 
     .line 721
-    check-cast v3, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     .line 722
     .local v3, "group":Landroid/view/ViewGroup;
@@ -985,7 +995,9 @@
     const/4 v12, 0x0
 
     :try_start_0
-    check-cast v12, [Ljava/lang/Object;
+    nop
+
+    nop
 
     invoke-virtual {v5, p0, v12}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1232,7 +1244,7 @@
     .line 1474
     const/4 v6, 0x1
 
-    invoke-virtual {v1, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v6}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     .line 1475
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1350,7 +1362,7 @@
     .line 1503
     const-class v6, Landroid/view/ViewDebug$CapturedViewProperty;
 
-    invoke-virtual {v4, v6}, Ljava/lang/reflect/Method;->isAnnotationPresent(Ljava/lang/Class;)Z
+    invoke-virtual {v4, v6}, Ljava/lang/reflect/AbstractMethod;->isAnnotationPresent(Ljava/lang/Class;)Z
 
     move-result v6
 
@@ -1369,7 +1381,7 @@
     .line 1505
     const/4 v6, 0x1
 
-    invoke-virtual {v4, v6}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v4, v6}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     .line 1506
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1622,13 +1634,15 @@
     .line 820
     move-object v0, v9
 
-    check-cast v0, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     move-object v2, v0
 
     .line 821
     .local v2, "group":Landroid/view/ViewGroup;
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -1645,7 +1659,7 @@
     :cond_0
     const-string/jumbo v1, "DONE."
 
-    invoke-virtual {v3, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 825
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->newLine()V
@@ -1896,7 +1910,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 871
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1921,7 +1935,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 868
     :cond_0
@@ -1934,7 +1948,7 @@
     :cond_1
     const-string/jumbo v5, "DONE."
 
-    invoke-virtual {v4, v5}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 876
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->newLine()V
@@ -2053,7 +2067,7 @@
 
     .line 1004
     :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
 
@@ -2076,7 +2090,7 @@
 
     .line 1008
     :cond_1
-    invoke-virtual {p2, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1009
     const/16 v3, 0x40
@@ -2084,7 +2098,7 @@
     invoke-virtual {p2, v3}, Ljava/io/BufferedWriter;->write(I)V
 
     .line 1010
-    invoke-virtual {p1}, Landroid/view/View;->hashCode()I
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
@@ -2092,7 +2106,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p2, v3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1011
     const/16 v3, 0x20
@@ -2190,7 +2204,9 @@
     move-object v1, v9
 
     .line 980
-    check-cast v1, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     add-int/lit8 v3, p3, 0x1
 
@@ -2325,7 +2341,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p2, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1111
     return-void
@@ -4161,7 +4177,9 @@
     if-eqz v5, :cond_1
 
     .line 472
-    check-cast v4, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     .end local v4    # "view":Landroid/view/View;
     invoke-static {v4, v0, v1}, Landroid/view/ViewDebug;->findView(Landroid/view/ViewGroup;Ljava/lang/String;I)Landroid/view/View;
@@ -4252,7 +4270,9 @@
     move-object v4, v3
 
     .line 929
-    check-cast v4, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     invoke-static {v4, p1, p2}, Landroid/view/ViewDebug;->findView(Landroid/view/ViewGroup;Ljava/lang/String;I)Landroid/view/View;
 
@@ -4474,7 +4494,7 @@
     .line 1044
     const/4 v7, 0x1
 
-    invoke-virtual {v3, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v3, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     .line 1045
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -4649,7 +4669,7 @@
     .line 1086
     const-class v5, Landroid/view/ViewDebug$ExportedProperty;
 
-    invoke-virtual {v3, v5}, Ljava/lang/reflect/Method;->isAnnotationPresent(Ljava/lang/Class;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/reflect/AbstractMethod;->isAnnotationPresent(Ljava/lang/Class;)Z
 
     move-result v5
 
@@ -4668,7 +4688,7 @@
     .line 1088
     const/4 v5, 0x1
 
-    invoke-virtual {v3, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v3, v5}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
     .line 1089
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -5005,14 +5025,14 @@
 
     .prologue
     .line 955
-    invoke-virtual {p0}, Landroid/view/View;->hashCode()I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
     if-ne v1, p2, :cond_1
 
     .line 956
-    invoke-virtual {p0}, Landroid/view/View;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
@@ -5240,7 +5260,7 @@
     :goto_0
     const-string/jumbo v4, "DONE."
 
-    invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 516
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
@@ -5269,7 +5289,7 @@
     :try_start_2
     const-string/jumbo v4, "-1 -1 -1"
 
-    invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 513
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
@@ -5451,7 +5471,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 608
     invoke-virtual {p1, v11}, Ljava/io/BufferedWriter;->write(I)V
@@ -5461,7 +5481,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 610
     invoke-virtual {p1, v11}, Ljava/io/BufferedWriter;->write(I)V
@@ -5471,7 +5491,7 @@
 
     move-result-object v9
 
-    invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 612
     invoke-virtual {p1}, Ljava/io/BufferedWriter;->newLine()V
@@ -5484,7 +5504,9 @@
     move-object v1, p0
 
     .line 614
-    check-cast v1, Landroid/view/ViewGroup;
+    nop
+
+    nop
 
     .line 615
     .local v1, "group":Landroid/view/ViewGroup;
@@ -5814,7 +5836,7 @@
 
     .line 1657
     .local v1, "p":Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual {v1}, Landroid/view/ViewGroup$LayoutParams;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
@@ -5982,18 +6004,18 @@
 
     .prologue
     .line 1348
-    invoke-virtual {p0, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1349
-    invoke-virtual {p0, p2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1350
-    invoke-virtual {p0, p3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, p3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1351
     const-string/jumbo v0, "="
 
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1352
     invoke-static {p0, p4}, Landroid/view/ViewDebug;->writeValue(Ljava/io/BufferedWriter;Ljava/lang/Object;)V
@@ -6050,15 +6072,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1448
     const-string/jumbo v1, ","
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1449
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1441
     .end local v0    # "output":Ljava/lang/String;
@@ -6079,15 +6101,15 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1448
     const-string/jumbo v2, ","
 
-    invoke-virtual {p0, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1449
-    invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     .line 1446
     throw v1
@@ -6097,7 +6119,7 @@
     :cond_0
     const-string/jumbo v1, "4,null"
 
-    invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
