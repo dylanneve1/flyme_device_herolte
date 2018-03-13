@@ -718,7 +718,6 @@
     .end local v0    # "invalidChargerObserver":Landroid/os/UEventObserver;
     :cond_1
     invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->registerBootCompleted(Lcom/android/server/BatteryService;)V
-
     return-void
 .end method
 

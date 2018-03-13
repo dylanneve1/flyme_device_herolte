@@ -67071,6 +67071,8 @@
 
     .line 15763
     :cond_0
+    :cond_flyme_0
+    
     and-int/lit8 v0, p4, 0x2
 
     if-eqz v0, :cond_4
@@ -67163,6 +67165,12 @@
     .end local v2    # "deleteAllUsers":Z
     .end local v6    # "users":[I
     :cond_3
+    invoke-static {}, Lcom/android/server/pm/PackageManagerService;->isFlymeLauncherCalling()Z
+
+    move-result v8
+
+    if-nez v8, :cond_flyme_0
+    
     :try_start_1
     new-instance v8, Landroid/content/Intent;
 
@@ -89748,4 +89756,152 @@
     monitor-exit v4
 
     throw v3
+.end method
+
+.method public static isFlymeLauncherCalling()Z
+    .locals 15
+
+    .prologue
+    const/4 v6, 0x0
+
+    .local v6, "isFlymeLauncherCalling":Z
+
+    :try_start_0
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v3
+
+    .local v3, "callingUid":I
+
+    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
+
+    move-result v2
+
+    .local v2, "callingPid":I
+
+    const-string/jumbo v5, "com.meizu.flyme.launcher"
+
+    .local v5, "flymeLauncherPkg":Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    .local v1, "callerPorcess":Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v0
+
+    .local v0, "am":Landroid/app/IActivityManager;
+
+    invoke-interface {v0}, Landroid/app/IActivityManager;->getRunningAppProcesses()Ljava/util/List;
+
+    move-result-object v9
+
+    .local v9, "pinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+
+    invoke-interface {v9}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    .local v8, "pinfo$iterator":Ljava/util/Iterator;
+
+    :cond_0
+
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    .local v7, "pinfo":Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    iget v11, v7, Landroid/app/ActivityManager$RunningAppProcessInfo;->uid:I
+
+    if-ne v11, v3, :cond_0
+
+    iget v11, v7, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
+
+    if-ne v11, v2, :cond_0
+
+    move-object v1, v7
+
+    .end local v1    # "callerPorcess":Landroid/app/ActivityManager$RunningAppProcessInfo;
+    .end local v7    # "pinfo":Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    iget-object v11, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
+
+    if-eqz v11, :cond_2
+
+    iget-object v12, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
+
+    const/4 v11, 0x0
+
+    array-length v13, v12
+
+    :goto_0
+    if-ge v11, v13, :cond_2
+
+    aget-object v10, v12, v11
+
+    .local v10, "pkg":Ljava/lang/String;
+
+    const-string/jumbo v14, "com.meizu.flyme.launcher"
+
+    invoke-static {v14, v10}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v14
+
+    if-eqz v14, :cond_3
+
+    const/4 v6, 0x1
+
+    .end local v0    # "am":Landroid/app/IActivityManager;
+    .end local v2    # "callingPid":I
+    .end local v3    # "callingUid":I
+    .end local v5    # "flymeLauncherPkg":Ljava/lang/String;
+    .end local v8    # "pinfo$iterator":Ljava/util/Iterator;
+    .end local v9    # "pinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+    .end local v10    # "pkg":Ljava/lang/String;
+    :cond_2
+    :goto_1
+    return v6
+
+    .restart local v0    # "am":Landroid/app/IActivityManager;
+    .restart local v2    # "callingPid":I
+    .restart local v3    # "callingUid":I
+    .restart local v5    # "flymeLauncherPkg":Ljava/lang/String;
+    .restart local v8    # "pinfo$iterator":Ljava/util/Iterator;
+    .restart local v9    # "pinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+    .restart local v10    # "pkg":Ljava/lang/String;
+    :cond_3
+    add-int/lit8 v11, v11, 0x1
+
+    goto :goto_0
+
+    .end local v0    # "am":Landroid/app/IActivityManager;
+    .end local v2    # "callingPid":I
+    .end local v3    # "callingUid":I
+    .end local v5    # "flymeLauncherPkg":Ljava/lang/String;
+    .end local v8    # "pinfo$iterator":Ljava/util/Iterator;
+    .end local v9    # "pinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+    .end local v10    # "pkg":Ljava/lang/String;
+    :catch_0
+
+    move-exception v4
+
+    .local v4, "e":Ljava/lang/Exception;
+    goto :goto_1
 .end method
