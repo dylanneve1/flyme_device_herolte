@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.IWindowSession"
 
-.field static final TRANSACTION_add:I = 0x1
-
-.field static final TRANSACTION_addToDisplay:I = 0x2
-
 .field static final TRANSACTION_addToDisplayWithoutInputChannel:I = 0x4
 
+.field static final TRANSACTION_addToDisplay_1:I = 0x2
+
 .field static final TRANSACTION_addWithoutInputChannel:I = 0x3
+
+.field static final TRANSACTION_add_0:I = 0x1
 
 .field static final TRANSACTION_cancelDragAndDrop:I = 0x15
 

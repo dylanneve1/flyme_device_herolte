@@ -49,7 +49,7 @@
     invoke-direct {p0, p2, p3}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;I)V
 
     .line 70
-    invoke-virtual {p0, p1}, Landroid/view/OrientationEventListener;->registerListener(Landroid/view/OrientationListener;)V
+    invoke-virtual {p0, p1}, Landroid/view/OrientationListener$OrientationEventListenerInternal;->registerListener(Landroid/view/OrientationListener;)V
 
     .line 67
     return-void

@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_addAccessibilityInteractionConnection:I = 0x6
 
-.field static final TRANSACTION_addClient:I = 0x1
+.field static final TRANSACTION_addClient_0:I = 0x1
 
 .field static final TRANSACTION_disableAccessibilityService:I = 0xd
 
@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_removeAccessibilityInteractionConnection:I = 0x7
 
-.field static final TRANSACTION_sendAccessibilityEvent:I = 0x2
+.field static final TRANSACTION_sendAccessibilityEvent_1:I = 0x2
 
 .field static final TRANSACTION_temporaryEnableAccessibilityStateUntilKeyguardRemoved:I = 0xa
 

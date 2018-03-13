@@ -61,9 +61,7 @@
     move-object v1, p1
 
     .line 546
-    nop
-
-    nop
+    check-cast v1, Landroid/view/ViewGroup;
 
     .line 547
     .local v1, "group":Landroid/view/ViewGroup;

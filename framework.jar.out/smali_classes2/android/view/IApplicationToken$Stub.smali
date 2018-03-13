@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_windowsGone_2:I = 0x3
 
-.field static final TRANSACTION_windowsVisible:I = 0x2
+.field static final TRANSACTION_windowsVisible_1:I = 0x2
 
 
 # direct methods
