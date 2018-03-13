@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.INetd"
 
-.field static final TRANSACTION_bandwidthEnableDataSaver_2:I = 0x3
+.field static final TRANSACTION_bandwidthEnableDataSaver:I = 0x3
 
 .field static final TRANSACTION_firewallReplaceUidChain_1:I = 0x2
 
@@ -48,7 +48,7 @@
 
 .field static final TRANSACTION_setResolverConfiguration_5:I = 0x6
 
-.field static final TRANSACTION_socketDestroy_4:I = 0x5
+.field static final TRANSACTION_socketDestroy:I = 0x5
 
 .field static final TRANSACTION_tetherApplyDnsInterfaces_7:I = 0x8
 

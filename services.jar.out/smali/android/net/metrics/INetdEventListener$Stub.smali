@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onConnectEvent:I = 0x2
 
-.field static final TRANSACTION_onDnsEvent:I = 0x1
+.field static final TRANSACTION_onDnsEvent_0:I = 0x1
 
 
 # direct methods

@@ -8467,7 +8467,7 @@
     .line 498
     .end local p4    # "resolvedType":Ljava/lang/String;
     :cond_22
-    
+
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -8489,7 +8489,7 @@
     const/16 p23, 0x0
 
     :cond_flyme_0
-    
+
     new-instance v22, Lcom/android/server/am/ActivityRecord;
 
     move-object/from16 v0, p0

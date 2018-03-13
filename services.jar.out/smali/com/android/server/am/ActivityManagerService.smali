@@ -4344,9 +4344,9 @@
     .param p5, "nowElapsed"    # J
 
     .prologue
-    
+
     invoke-static/range {p1 .. p1}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->applyFlymeOomAdjLocked(Lcom/android/server/am/ProcessRecord;)V
-    
+
     const/16 v25, 0x1
 
     .local v25, "success":Z
@@ -37627,13 +37627,13 @@
 
     :goto_3
     invoke-virtual {v8, v7, v6}, Lcom/android/server/am/BatteryStatsService;->notePackageInstalled(Ljava/lang/String;I)V
-    
+
     move-object/from16 v0, p0
 
     move-object/from16 v1, v24
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->addFlymeAppLocked(Lcom/android/server/am/ActivityManagerService;Landroid/content/Intent;)V
-    
+
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_3
 
@@ -107820,9 +107820,9 @@
     invoke-virtual {v5, v7}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
     :cond_3c
-    
+
     invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->updateFlymeOomAdjLocked(Lcom/android/server/am/ActivityManagerService;)V
-    
+
     return-void
 
     .restart local v6    # "app":Lcom/android/server/am/ProcessRecord;
