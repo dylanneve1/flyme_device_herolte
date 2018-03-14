@@ -74,7 +74,7 @@
     <bool name="config_intrusiveBatteryLed">true</bool>
     <bool name="config_disableMenuKeyInLockScreen">false</bool>
     <bool name="config_enableLockBeforeUnlockScreen">false</bool>
-    <bool name="config_enableLockScreenRotation">true</bool>
+    <bool name="config_enableLockScreenRotation">false</bool>
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
     <bool name="config_enableTranslucentDecor">true</bool>
     <bool name="config_hotswapCapable">false</bool>
