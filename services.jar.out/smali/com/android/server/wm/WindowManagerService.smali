@@ -12743,7 +12743,7 @@
 
     move-result v3
 
-    monitor-exit v38
+    monitor-exit v39
 
     return v3
 
