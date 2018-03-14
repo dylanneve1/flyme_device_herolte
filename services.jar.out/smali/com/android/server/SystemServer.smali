@@ -5378,8 +5378,12 @@
     const-string/jumbo v5, "com.android.server.wallpaper.WallpaperManagerService$Lifecycle"
 
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/String;)Lcom/android/server/SystemService;
+    
+    move-result-object v4
 
+    move-object/from16 v0, p0
 
+    iput-object v4, v0, Lcom/android/server/SystemServer;->mFlymeWallpaperLifeService:Lcom/android/server/SystemService;
 
     .line 1032
     const-wide/32 v4, 0x80000
