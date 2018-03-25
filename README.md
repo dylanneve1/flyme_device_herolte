@@ -4,8 +4,11 @@ This is a Flyme Nougat patchrom for the Galaxy S7/S7E. It's a work in progress.
 
 Stuff I have to do :
 
-- Get it to boot fully.
-- Fix whatever is broken when it does.
+- ~~Get it to boot fully.~~
+- ~~Fix whatever is broken when it does.~~
+- Fix RIL
+- Fix power button
+- Fix fingerprint sensor
 
 Kernel source :
 https://github.com/LineageOS/android_kernel_samsung_universal8890
