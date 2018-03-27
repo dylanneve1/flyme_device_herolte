@@ -1015,3 +1015,14 @@
     .line 72
     return-void
 .end method
+
+.method public updateMultiOpenAppData(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "sourceDir"    # Ljava/lang/String;
+    .param p2, "targetDir"    # Ljava/lang/String;
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
+.end method
