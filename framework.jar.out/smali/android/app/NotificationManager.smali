@@ -1295,6 +1295,33 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
+    const/4 v1, 0x0
+
+    .line 77
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->matchesCallFilter(Landroid/os/Bundle;)[Z
+
+    move-result-object v0
+
+    .line 78
+    .local v0, "result":[Z
+    if-eqz v0, :cond_0
+
+    array-length v2, v0
+
+    if-lez v2, :cond_0
+
+    aget-boolean v1, v0, v1
+
+    .line 79
+    :cond_0
+    return v1
+.end method
+
+.method public matchesCallFilter(Landroid/os/Bundle;)[Z
+    .locals 3
+    .param p1, "extras"    # Landroid/os/Bundle;
+
+    .prologue
     .line 403
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
@@ -1303,17 +1330,13 @@
     .line 405
     .local v1, "service":Landroid/app/INotificationManager;
     :try_start_0
-    invoke-interface {v1, p1}, Landroid/app/INotificationManager;->matchesCallFilter(Landroid/os/Bundle;)Z
+    invoke-interface {v1, p1}, Landroid/app/INotificationManager;->matchesCallFilter(Landroid/os/Bundle;)[Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v2
+    move-result-object v2
 
-    const/4 v0, 0x0
-
-    aget-boolean v2, v2, v0
-
-    return v2
+    return-object v2
 
     .line 406
     :catch_0
@@ -1531,6 +1554,8 @@
 
     .line 320
     .local v5, "copy":Landroid/app/Notification;
+    invoke-direct {p0, v5}, Landroid/app/NotificationManager;->fixedFlymeFontColor(Landroid/app/Notification;)V
+
     :try_start_0
     iget-object v2, p0, Landroid/app/NotificationManager;->mContext:Landroid/content/Context;
 
@@ -1870,4 +1895,16 @@
     move-result-object v2
 
     throw v2
+.end method
+
+.method private fixedFlymeFontColor(Landroid/app/Notification;)V
+    .locals 1
+    .param p1, "copy"    # Landroid/app/Notification;
+
+    .prologue
+    iget-object v0, p0, Landroid/app/NotificationManager;->mContext:Landroid/content/Context;
+
+    invoke-static {p1, v0}, Landroid/app/Notification$Builder;->fixedFontColor(Landroid/app/Notification;Landroid/content/Context;)V
+
+    return-void
 .end method
